@@ -30,7 +30,7 @@ public class JavaxEjbTests {
                     .is(annotatedWith(EJB.class));
 
     /**
-     * False Positive
+     * False Positive. @EJB is set to Retention.RUNTIME, so should be OK?
      * @see org.superbiz.servlet.RunAsServlet
      * */
     @ArchTest

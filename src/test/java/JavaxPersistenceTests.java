@@ -51,7 +51,7 @@ public class JavaxPersistenceTests {
             .should().beAnnotatedWith(GET_TYPE.is(nameMatching("javax\\.persistence\\.Entity")));
 
     /**
-     * False Positive
+     * False Positive. @Id is set to Retention.RUNTIME, so should be OK?
      * @see org.superbiz.servlet.JpaBean
      */
     @ArchTest
@@ -63,7 +63,7 @@ public class JavaxPersistenceTests {
             .noClasses().should().setFieldWhere(TARGET_IS_COLUMN);
 
     /**
-     * False Positive
+     * False Positive. @Generated value is set to Retention.RUNTIME, so should be OK?
      * @see org.superbiz.servlet.JpaBean
      */
     @ArchTest
@@ -72,7 +72,7 @@ public class JavaxPersistenceTests {
 
 
     /**
-     * False Positive
+     * False Positive. @PersistenceUnit is set to Retention.RUNTIME, so should be OK?
      * @see org.superbiz.servlet.JpaServlet
      */
     @ArchTest
