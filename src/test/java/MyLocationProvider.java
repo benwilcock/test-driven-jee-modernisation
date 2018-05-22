@@ -9,15 +9,9 @@ public class MyLocationProvider implements LocationProvider {
 
     @Override
     public Set<Location> get(Class<?> testClass) {
-        // Determine Locations (= URLs) to import
-        // Can also consider the actual test class, e.g. to read some custom annotation
         String sources = "target/classes/";
-
         Set<Location> locations = new HashSet<>();
         locations.add(Location.of(Paths.get(sources)));
         return locations;
-//            Set set = new HashSet();
-//            set.add(new File(sources).toURI().toURL());
-//            return set;
     }
 }
